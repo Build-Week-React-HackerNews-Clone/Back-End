@@ -4,7 +4,9 @@ This is the backend portion of a three-part build week project at Lambda School.
 
 ## Api endpoints
 
-Base URL
+## Base URL 
+
+**https://git.heroku.com/hacked-news-app.git**
 
 ## Auth-Routes
 
