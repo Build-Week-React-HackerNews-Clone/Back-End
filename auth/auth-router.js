@@ -20,6 +20,7 @@ router.post("/register", checkUser, (req, res) => {
           res.status(500).json({ message: "Username and/or email in use.", error })
         }
         res.status(500).json({ message: "Cannot add the user at this time", error });
+        console.log(error);
       });
   });
   
