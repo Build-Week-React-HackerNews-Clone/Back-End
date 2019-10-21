@@ -42,7 +42,10 @@ router.post("/register", checkUser, (req, res) => {
         }
       })
       .catch(error => {
-        res.status(500).json(error);
+        res.status(500).json({
+          message: "Server error, check login function on routes.js",
+          error: `${error}`
+        });
       });
   });
   
