@@ -1,6 +1,8 @@
 const knex = require('knex');
-const secrets = require('./defaults.js');
+const defaults = require('./defaults.js');
 
-const knexConfig = require('../knexfile.js')[secrets.environment];
+const environment = defaults.environment;
+
+const knexConfig = require('../knexfile.js')[environment];
 
 module.exports = knex(knexConfig.development);
