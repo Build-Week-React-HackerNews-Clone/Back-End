@@ -6,7 +6,7 @@ This is the backend portion of a three-part build week project at Lambda School.
 
 ## Base URL 
 
-**https://git.heroku.com/hacked-news-app.git**
+**https://hacked-news-app.herokuapp.com/**
 
 ## Auth-Routes
 
