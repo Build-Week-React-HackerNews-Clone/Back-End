@@ -19,7 +19,7 @@ module.exports = {
       directory: "./data/seeds"
     }
   },
-  development: {
+  production: {
     client: "sqlite3",
     useNullAsDefault: true,
     connection: {
