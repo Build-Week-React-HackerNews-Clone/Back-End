@@ -1,7 +1,7 @@
 // Update with your config settings.
 
-const productionConnection =
-  process.env.DATABASE_URL || "postgres://localhost/postgres";
+// const productionConnection =
+//   process.env.DATABASE_URL || "postgres://localhost/postgres";
 
 module.exports = {
   development: {
@@ -34,8 +34,7 @@ module.exports = {
       }
     },
     migrations: {
-      directory: "./data/migrations",
-      tableName: "knex_migrations"
+      directory: "./data/migrations"
     },
     seeds: {
       directory: "./data/seeds"
