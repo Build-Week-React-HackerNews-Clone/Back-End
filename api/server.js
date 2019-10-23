@@ -2,14 +2,14 @@ const helmet = require("helmet");
 const cors = require("cors");
 const axios = require("axios");
 const express = require("express");
-const secrets = require("../data/defaults.js");
+// const secrets = require("../data/defaults.js");
 
 const articleRouter = require("../articles/article-router.js");
 const authRouter = require("../auth/auth-router.js");
 const db = require("../data/dbConfig.js");
-var CronJob = require("cron").CronJob;
-const cron = require("node-cron");
-const fs = require("fs");
+// var CronJob = require("cron").CronJob;
+// const cron = require("node-cron");
+// const fs = require("fs");
 
 //  var task = new CronJob("15 * * * *", function() {
 //   console.log("running a task every minute");
@@ -25,6 +25,36 @@ server.use(cors());
 
 server.use("/api/auth", authRouter);
 server.use("/api/articles", articleRouter);
+
+var schedule = require('node-schedule');
+ 
+var job = schedule.scheduleJob('* 2 * * * *', function(){
+  console.log('start');
+  axios
+  .get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
+  .then(response => {
+    var topTwenty = response.data.slice(0, 20);
+    // console.log(topTwenty);
+    return topTwenty;
+    //now you have to make a call to get each of the 20 stories and make a new array of that.
+  })
+  .then(topTwenty => {
+    let articles = topTwenty.map((foo, index) => {
+      // console.log("foo", foo);
+      // console.log("index", index);
+      const indexN = index;
+      // console.log("n", indexN);
+      getTopTwenty(foo, indexN);
+    });
+  })
+ 
+  .catch(error => {
+    console.log(error);
+  });
+  console.log("end");
+});
+
+
 
 server.get("/", (req, res) => {
   res.send("Server is running");
