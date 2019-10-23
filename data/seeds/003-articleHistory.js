@@ -6,6 +6,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("articleHistory").insert([
         {
+          rank: 1,
           article_id: 21323663,
           title: "Firefox 70",
           url:
@@ -17,6 +18,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 2,
           article_id: 21324768,
           title: "Ask HN: What's a promising area to work on?",
           url: "https://news.ycombinator.com/",
@@ -27,6 +29,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 3,
           article_id: 21329655,
           title: "Geometry, Algebra, and Intuition (2017)",
           url:
@@ -38,6 +41,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 4,
           article_id: 21329453,
           title:
             "New York Times Eliminates Director of Information Security Position",
@@ -49,6 +53,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 5,
           article_id: 21328296,
           title:
             "TechCrunch published Snap earnings before numbers went public",
@@ -60,6 +65,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 6,
           article_id: 21328809,
           title: "FTC Brings First Case Against Developers of “Stalking” Apps",
           url:
@@ -71,6 +77,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 7,
           article_id: 21324273,
           title:
             "Dramatically reduced power usage in Firefox 70 on macOS with Core Animation",
@@ -83,6 +90,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 8,
           article_id: 21329870,
           title:
             "Pedestrian Bridge Collapse over SW 8th Street Miami, Florida [pdf]",
@@ -95,6 +103,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 9,
           article_id: 21327114,
           title: "Natural Language Processing (2018) [pdf]",
           url:
@@ -106,6 +115,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 10,
           article_id: 21326484,
           title: "Don't Use VPN Services",
           url: "https://gist.github.com/joepie91/5a9909939e6ce7d09e29",
@@ -116,6 +126,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 11,
           article_id: 21327443,
           title: "Storing 50M events per second in Elasticsearch",
           url:
@@ -127,6 +138,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 12,
           article_id: 21322291,
           title:
             "London Ultra Low Emission Zone cuts toxic air pollution by a third",
@@ -139,6 +151,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 13,
           article_id: 21329572,
           title:
             "WeWork Needed a Bailout, But Adam Neumann Still Leaves a Billionaire",
@@ -151,6 +164,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 14,
           article_id: 21328219,
           title:
             "U.S. tech inventors are highly clustered because of idea spillover",
@@ -163,6 +177,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 15,
           article_id: 21328923,
           title:
             "YARA – A pattern-matching Swiss knife for malware researchers",
@@ -174,6 +189,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 16,
           article_id: 21325962,
           title: "Slimbook collaborates with the PowerPC laptop",
           url:
@@ -185,6 +201,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 17,
           article_id: 21325138,
           title: "Ask HN: Agriculture startups doing interesting work?",
           url: "https://news.ycombinator.com/",
@@ -195,6 +212,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 18,
           article_id: 21323396,
           title:
             "Cache Poisoned DoS Attack: Shutdown any CDN Website with One HTTP Request",
@@ -206,6 +224,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 19,
           article_id: 21325295,
           title: "Ranked-choice voting is on the ballot in New York City",
           url:
@@ -217,6 +236,7 @@ exports.seed = function(knex) {
           type: "story"
         },
         {
+          rank: 20,
           article_id: 21322712,
           title: "Ghost 3.0",
           url: "https://ghost.org/blog/3-0/",
