@@ -5,18 +5,19 @@ const axios = require("axios");
 
 const secrets = require("../data/defaults.js");
 
-const authenticate = require("../auth/auth-middleware.js");
+const articleRouter = require("../articles/article-router.js");
 const authRouter = require("../auth/auth-router.js");
 const db = require("../data/dbConfig.js");
+
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
-console.log("environment", secrets.environment);
 
 server.use("/api/auth", authRouter);
+server.use("/api/articles", articleRouter);
 
 server.get("/", (req, res) => {
   res.send("Server is running");
@@ -58,18 +59,35 @@ server.get("/", (req, res) => {
 //       //build each story obj and return it
 //       // console.log('get20', res.data);
 //       const rank = index + 1;
-//       const article = {        
-//         article_id: res.data.id,
-//         title: res.data.title,
-//         url: res.data.url,
-//         time: res.data.time,
-//         descendants: res.data.descendants,
-//         score: res.data.score,
-//         by: res.data.by,
-//         type: res.data.type
-//       };
-//       console.log("get20", article, rank);
+//       if (res.data.url === undefined){
+//         const article = {
+//           rank: rank,
+//           article_id: res.data.id,
+//           title: res.data.title,
+//           url: 'https://news.ycombinator.com/',
+//           time: res.data.time,
+//           descendants: res.data.descendants,
+//           score: res.data.score,
+//           by: res.data.by,
+//           type: res.data.type
+//         };
+//         console.log("get20X", article, rank);
 //       return article;
+//       } else {
+//         const article = {
+//           rank: rank,
+//           article_id: res.data.id,
+//           title: res.data.title,
+//           url: res.data.url,
+//           time: res.data.time,
+//           descendants: res.data.descendants,
+//           score: res.data.score,
+//           by: res.data.by,
+//           type: res.data.type
+//         };
+//         console.log("get20", article, rank);
+//       return article;
+//       }
 //     })
 //     .catch(error => {
 //       console.log(error);

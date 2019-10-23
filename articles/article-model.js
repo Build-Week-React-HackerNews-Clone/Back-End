@@ -1,5 +1,10 @@
 const db = require('../data/dbConfig.js');
 
 module.exports = {
-    updateByRank
+    find,
+    // updateByRank
   };
+
+  function find() {
+    return db('topArticles');
+  }
