@@ -1,15 +1,19 @@
 const router = require("express").Router();
+const articleModel = require("./article-model.js");
+//import here the auth middleware for use with favorites
 
-const axios = require('axios');
+router.get("/"),
+  (req, res) => {
+    articleModel
+      .find()
+      .then(topArticles => {
+        res.status(200).json(topArticles);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ message: "Cannot retrieve articles from database", error });
+      });
+  };
 
-
-axios.get('https://hacker-news.firebaseio.com/v0/topstories')
-  .then(response => {
-    console.log(response.data.url);
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-
-module.exports = server;
+module.exports = router;
