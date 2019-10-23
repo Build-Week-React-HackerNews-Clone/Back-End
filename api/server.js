@@ -5,17 +5,16 @@ const axios = require("axios");
 
 const secrets = require("../data/defaults.js");
 
-const authenticate = require("../auth/auth-middleware.js");
+const articleRouter = require("../articles/article-router.js");
 const authRouter = require("../auth/auth-router.js");
 const db = require("../data/dbConfig.js");
-const articleRouter = require("../articles/article-router.js");
+
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
-console.log("environment", secrets.environment);
 
 server.use("/api/auth", authRouter);
 server.use("/api/articles", articleRouter);
